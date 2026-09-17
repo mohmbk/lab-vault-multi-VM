@@ -1,0 +1,44 @@
+services:
+
+  postgres2:
+    image: postgres:18
+    container_name: postgres2
+    restart: unless-stopped
+    environment:
+      - POSTGRES_DB=${POSTGRES_DB}
+    volumes:
+      - postgres2-data:/var/lib/postgresql
+    networks:
+      - odoo2-network
+
+  odoo2:
+    build:
+      context: ./odoo2
+      dockerfile: Dockerfile
+    container_name: odoo2
+    restart: unless-stopped
+    depends_on:
+      - postgres2
+    environment:
+      - HOST=postgres2
+    secrets:
+      - vault_token
+    ports:
+      - "8069:8069"
+    volumes:
+      - odoo2-data:/var/lib/odoo
+      - ./odoo2/odoo.conf:/etc/odoo/odoo.conf
+    networks:
+      - odoo2-network
+
+volumes:
+  postgres2-data:
+  odoo2-data:
+
+networks:
+  odoo2-network:
+    driver: bridge
+
+secrets:
+  vault_token:
+    file: ./.vault_token.txt

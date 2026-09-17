@@ -1,0 +1,5 @@
+# Environment files
+**/.env
+
+# Vault tokens
+**/.vault_token.txt

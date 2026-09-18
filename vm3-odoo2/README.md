@@ -3,8 +3,8 @@
 ## Informations
 
 * IP : `192.168.30.12`
-* Odoo : `13.0`
-* PostgreSQL : `10`
+* Odoo : `19.0`
+* PostgreSQL : `18`
 * Odoo Port : `8069`
 
 ## Rôle

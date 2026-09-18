@@ -18,7 +18,7 @@ if [ -z "$DB_USER" ] || [ -z "$DB_PASSWORD" ]; then
 fi
 
 export USER="$DB_USER"
-export PASSWORD="DB_PASSWORD"
+export PASSWORD="$DB_PASSWORD"
 
 echo "Identifiants PostgreSQL récupérés depuis Vault."
 

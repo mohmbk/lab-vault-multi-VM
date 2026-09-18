@@ -1,4 +1,4 @@
-# SIG SERVICE — Secure Secret Management Lab
+# Secure Secret Management Lab
 
 Laboratoire de mise en place d'une architecture sécurisée pour la gestion des secrets d'une infrastructure ERP basée sur **Odoo**, **PostgreSQL** et **HashiCorp Vault**.
 
@@ -358,5 +358,3 @@ git push
 ```
 
 ---
-
-## Avert
